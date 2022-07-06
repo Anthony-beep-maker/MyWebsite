@@ -1,0 +1,219 @@
+body, html{
+    background-color: #ececec;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+body::-webkit-scrollbar{
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: #ececec;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #919191;
+    border-radius: 10px;
+    height: 70px;
+}
+
+.block-page{
+    width: 70%;
+    margin: auto;
+    background-color: white;
+    padding: 5%;
+    min-height: 100%;
+    position: relative;
+}
+
+ul, li{
+    list-style-type: none;
+    color: white;
+}
+
+h1{
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.menu-theme{
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .95);
+    width: 100%;
+    box-shadow: 0 1px 10px black;
+    z-index: 1;
+}
+
+.clmenu-cb, .menuburger{
+    display: none;
+    appearance: none;
+}
+
+.menu-theme .menu-nav{
+    display: flex;
+}
+
+.sous-menu-navV, .sous-menu-navC{
+    position: fixed;
+    background-color: rgba(0, 0, 0, .95);
+    margin-top: 14px;
+    padding: 15px;
+    display: none;
+}
+
+.sous-menu-navC li, .sous-menu-navV li{
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+ul li a{
+    padding: 15px 20px;
+    margin: 10px 3px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: all .3s;
+}
+
+.vin:hover{
+    border-bottom: 2px rgb(137, 55, 196) solid;
+    padding: 13px 20px;
+}
+.vin:hover ~ .sous-menu-navV, .sous-menu-navV:hover{
+    display: block;
+}
+
+.cereales:hover{
+    border-bottom: 2px #ff9b2a solid;
+    padding: 13px 20px;
+}
+.cereales:hover ~ .sous-menu-navC, .sous-menu-navC:hover{
+    display: block;
+}
+
+.elevage:hover{
+    border-bottom: 2px #ececec solid;
+    padding: 13px 20px;
+}
+
+ul li a:hover{
+    background-color: rgba(255, 255, 255, .8);
+    color: black;
+}
+
+.contenu{
+    text-align: justify;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.contenu-elevage{
+    margin-top: 50px;
+    text-align: justify;
+    display: flex;
+}
+
+figure{
+    text-align: center;
+    background-color: #ff8b55;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+strong{
+    font-size: 2em;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    font-size: .8em;
+}
+
+@media screen and (max-width: 900px){
+    .contenu-elevage{
+        display: flex;
+        flex-direction: column;
+    }
+
+    figure{
+        margin-left: 10px;
+    }
+
+    .block-page{
+        width: 90%;
+        
+    }
+
+    .menu-theme{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 80%;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: all .5s cubic-bezier(.9,.03,.69,.22);
+    }
+    .menu-nav{
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        font-size: .7em;
+    }
+    .menu-nav li{
+        margin-top: 30px;
+    }
+
+    .elevage{
+        font-size: 1.8em;
+        text-decoration: underline;
+        margin-bottom: 50px;
+    }
+
+    .cereales{
+        font-size: 1.8em;
+        text-decoration: underline;
+    }
+
+    .vin{
+        font-size: 1.8em;
+        text-decoration: underline;
+    }
+
+    .menuburger{
+        display: block;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        width: 30px;
+        z-index: 2;
+        cursor: pointer;
+    }
+    
+    .sous-menu-navC, .sous-menu-navV{
+        display: block;
+        position: relative;
+        background: none;
+        border-bottom: 1px solid white;
+    }
+
+    .clmenu-cb:checked ~ .menu-theme{
+        transform: translateX(0);
+    }
+}
